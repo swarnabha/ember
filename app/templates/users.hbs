@@ -1,8 +1,7 @@
 {{page-title "Users"}}
 
-<Input @value={{this.newTitle}} @enter={{this.addUser}} />
+{{!-- <Input @value={{this.newTitle}} @enter={{this.addUser}} /> --}}
 
-hi
 {{!-- <ul>
   {{#each @model as |users|}}
     <li>
@@ -10,6 +9,36 @@ hi
     </li>
   {{/each}}
 </ul> --}}
+
+
+{{!-- <div class="row">
+  <div class="col-md-4 pull-right">
+    <form {{action "submitUser" on="submit"}} class="form-inline pull-right">
+      <div class="form-group">
+        {{input value=user.name class="form-control" placeholder="Enter your Name"}}
+      </div>
+      <div class="form-group">
+        {{input value=user.email class="form-control" placeholder="Enter your email"}}
+      </div>
+      <button class="btn btn-primary" {{action "submitUser"}}>Create User</button>
+    </form>
+  </div>
+</div>
+<hr> --}}
+
+
+<form {{on "submit" this.onSubmit}}>
+ <div>New User Form</div>
+ <label>
+    <span> Name</span>
+    <Input @value={{this.name}} />
+  </label>
+ <label>
+    <span>Email</span>
+    <Input @value={{this.email}} />
+  </label>
+  <button type="submit">Create</button>
+</form>
 
 
 {{outlet}}
